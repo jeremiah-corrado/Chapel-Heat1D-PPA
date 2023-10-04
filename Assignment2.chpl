@@ -72,7 +72,7 @@ proc taskSimulate(tid: int) {
       if tid != nTasks-1 then uLocal1[omegaLocalBuffered.high] = halos[tid][RIGHT];
 
       // compute the FD kernel in parallel
-      foreach i in omegaLocalHat do
+      for i in omegaLocalHat do
         uLocal2[i] = uLocal1[i] + alpha *
           (uLocal1[i-1] - 2 * uLocal1[i] + uLocal1[i+1]);
     }
